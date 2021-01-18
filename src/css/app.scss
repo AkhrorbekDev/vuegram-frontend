@@ -1,0 +1,33 @@
+// app global css in SCSS form
+* {
+  font-family: 'Lobster', cursive;
+
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  list-style: none;
+  font-size: 16px;
+}
+
+p, h1, h2, h3, h4, h5, h6, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+button, a {
+  cursor: pointer;
+}
+
+.title {
+  font-family: 'Lobster', cursive;
+  color: $primary;
+}
+
+.d-none {
+  display: none;
+}
