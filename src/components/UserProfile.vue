@@ -1,9 +1,9 @@
 <template>
   <q-card class="row items-center justify-between q-px-md q-py-sm" flat>
-    <div class="col-12 row ">
+    <div class="full-width row ">
       <div class="col-4 row items-center">
         <q-avatar
-          size="150px"
+          size="6rem"
           class="bg-primary text-white q-mr-sm overflow-hidden"
         >
           <img
@@ -62,17 +62,5 @@ export default {
 </script>
 
 <style scoped>
-.file-input {
-  height: 35px;
-  background-color: rgba(255, 255, 255, .7);
-  z-index: 2;
-}
 
-.file-input-icon {
-  z-index: 1;
-}
-
-.tool-tip {
-  font-size: 14px;
-}
 </style>

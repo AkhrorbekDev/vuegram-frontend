@@ -21,7 +21,6 @@
             class="cursor-pointer"
           />
           <q-file
-            v-model="imageupload"
             class="d-none"
             accept="image/*"
             @input="uploadFile"
@@ -32,11 +31,11 @@
         v-ripple
         class="nav-link relative-position flex flex-center cursor-pointer"
         active-class="is-active"
+        :to="{ name: 'profile', params: { login: me.login } }"
       >
         <q-icon
           size="md"
           name="account_circle"
-          @click="getMe"
         />
       </q-item>
     </q-list>
@@ -49,12 +48,12 @@ import { mapGetters } from 'vuex';
 export default {
   name: 'NavbarBottom',
   data() {
-    return {
-      ...mapGetters({
-        me: 'auth/me',
-      }),
-      imageupload: null,
-    };
+    return {};
+  },
+  computed: {
+    ...mapGetters({
+      me: 'auth/me',
+    }),
   },
   methods: {
     async getMe() {

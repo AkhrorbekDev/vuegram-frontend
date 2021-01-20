@@ -1,5 +1,5 @@
 {
-  "name": "vue-gram",
+  "name": "Vuegram",
   "version": "0.0.1",
   "description": "A Quasar Framework app",
   "productName": "vue-gram",
@@ -21,7 +21,6 @@
     "core-js": "^3.6.5",
     "eslint-import-resolver-alias": "^1.1.2",
     "lodash-es": "^4.17.15",
-    "network-heart-service": "^0.1.2",
     "node-sass": "^5.0.0",
     "quasar": "^1.0.0",
     "sass": "^1.28.0",

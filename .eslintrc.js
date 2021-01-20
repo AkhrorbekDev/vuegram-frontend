@@ -54,6 +54,7 @@ module.exports = {
 
   // add your custom rules here
   rules: {
+    'no-console': 'off',
     'func-names': 'off',
     'no-prototype-builtins': 'off',
     'no-else-return': ['error', { allowElseIf: true }],
@@ -72,7 +73,7 @@ module.exports = {
     }],
     'no-param-reassign': 'off',
     'prefer-promise-reject-errors': 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'off' : 'error',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 0 : 0,
     'object-curly-newline': ['error', {
       ObjectExpression: { multiline: true, consistent: true },
       ObjectPattern: { multiline: true, consistent: true },

@@ -24,8 +24,8 @@ class User {
     return this.result;
   }
 
-  static async get({ query = {} }) {
-    await axios.get('/api/users', { params: query })
+  static async get({ query = {} } = {}) {
+    await axios.get('https://vuegramm.herokuapp.com/api/users', { params: query })
       .then((res) => {
         const { data } = res;
         this.result = {
@@ -41,10 +41,6 @@ class User {
       });
 
     return this.result;
-  }
-
-  static async update(data) {
-    console.log(data);
   }
 }
 

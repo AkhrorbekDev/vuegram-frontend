@@ -1,7 +1,10 @@
 <template>
   <q-card class="full-width" bordered flat>
     <div class="flex justify-between q-pa-sm">
-      <router-link to="#!" tag="p" class="flex items-center q-mb-none">
+      <router-link
+        :to="{ name: 'profile', params: { login: post.user.login }}"
+        tag="p"
+        class="flex items-center q-mb-none">
         <q-avatar
           size="xl"
           class="bg-primary text-white q-mr-sm"
@@ -17,7 +20,7 @@
             {{ post.user.login }}
           </router-link>
           <p
-            v-if="post.location"
+            v-if="post.location !== 'null' && post.location !== ''"
             class="q-mb-none location"
           >
             {{ post.location }}
@@ -25,6 +28,7 @@
         </div>
       </router-link>
     </div>
+    <q-separator />
     <q-img
       :src="post.photo"
       :alt="post.body"
@@ -38,7 +42,8 @@
         />
       </template>
     </q-img>
-    <div>
+    <q-separator />
+    <div class="flex justify-between q-px-sm ">
       <post-comment :body="post.comment" :user-name="post.user.login" :date="formattedDate" />
     </div>
   </q-card>

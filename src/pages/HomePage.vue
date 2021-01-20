@@ -1,19 +1,6 @@
 <template>
   <q-page>
     <div v-if="isLoading">
-      <div v-if="posts.length > 0">
-        <post-card
-          v-for="post in posts"
-          :key="post.id"
-          :post="post"
-          class="q-my-sm"
-        />
-      </div>
-      <div v-else class="absolute-center">
-        <p>Post not found :(</p>
-      </div>
-    </div>
-    <div v-else>
       <q-card
         v-for="n in skeletons"
         :key="n"
@@ -44,6 +31,19 @@
         </q-card-section>
       </q-card>
     </div>
+    <div v-else>
+      <div v-if="posts">
+        <post-card
+          v-for="post in posts"
+          :key="post.id"
+          :post="post"
+          class="q-my-sm"
+        />
+      </div>
+      <div v-else class="absolute-center">
+        <p>Post not found :(</p>
+      </div>
+    </div>
   </q-page>
 </template>
 
@@ -59,7 +59,7 @@ export default {
   data() {
     return {
       netStatus: true,
-      isLoading: false,
+      isLoading: true,
       skeletons: 3,
     };
   },
@@ -70,25 +70,19 @@ export default {
     async posts() {
       if (this.netStatus) {
         const response = await PostService.getPosts();
-        if (response.status === 404) {
-          this.isLoading = true;
-          return [];
+        if (response.status === 200) {
+          this.isLoading = false;
+          return response.data;
         }
-        this.isLoading = true;
-        return response.data;
+        return [];
       }
-      this.isLoading = true;
       return [];
     },
   },
   methods: {
     networkStatus() {
       const networkStatus = window.navigator.onLine;
-      if (networkStatus) {
-        this.netStatus = true;
-      } else {
-        this.netStatus = false;
-      }
+      this.netStatus = networkStatus;
     },
   },
 };

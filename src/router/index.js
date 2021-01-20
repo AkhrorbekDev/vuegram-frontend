@@ -27,14 +27,14 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   if (!store.getters['auth/isAuthorized'] && to.matched.some((route) => route.meta.protected)) {
     next({
-      name: 'login',
+      name: 'registry',
       query: {
         redirectTo: to.fullPath,
       },
     });
   } else if (window.navigator.onLine === false) {
     next({
-      name: 'login',
+      name: 'empty',
       query: {
         redirectTo: to.fullPath,
       },
