@@ -19,7 +19,7 @@
         </div>
         <ul class="flex items-center">
           <li class="flex items-center">
-            <b class="q-mr-sm">{{ profileInfo.postsCount || 0 }}</b>
+            <b class="q-mr-sm">{{ profileInfo.postsCount ? profileInfo.postsCount : 0 }}</b>
             <span>posts</span>
           </li>
           <!--  <li class="flex column justify-center items-center">

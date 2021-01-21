@@ -2272,6 +2272,11 @@ babel-plugin-module-resolver@^4.0.0:
     reselect "^4.0.0"
     resolve "^1.13.1"
 
+babel-plugin-transform-remove-console@^6.9.4:
+  version "6.9.4"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-remove-console/-/babel-plugin-transform-remove-console-6.9.4.tgz#b980360c067384e24b357a588d807d3c83527780"
+  integrity sha1-uYA2DAZzhOJLNXpYjYB9PINSd4A=
+
 balanced-match@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
@@ -7315,11 +7320,6 @@ neo-async@^2.5.0, neo-async@^2.6.1:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity "sha1-tKr7k+OustgXTKU88WOrfXMIMF8= sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw=="
-
-network-heart-service@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/network-heart-service/-/network-heart-service-0.1.2.tgz#14c87f87ff791857ab864d393bc77af6b12cc1e4"
-  integrity "sha1-FMh/h/95GFerhk05O8d69rEsweQ= sha512-6mmxeDCrIEfcjU577Y8gVo6E7g1IWp3TqvjIr36lXJBuSeh3pQ6T5PS/HSPWhWKUUXFeQ4eXORAi22YkdDotKw=="
 
 nice-try@^1.0.4:
   version "1.0.5"

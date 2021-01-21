@@ -1,8 +1,7 @@
 <template>
   <q-page>
     <q-card flat>
-      <user-profile v-if="!isLoadingUser" :profile-info="profileInfo" />
-      <q-item v-else class="full-width">
+      <q-item v-if="isLoadingUser" class="full-width">
         <q-item-section avatar class="q-mr-sm col-4">
           <q-skeleton type="QAvatar" size="6rem" />
         </q-item-section>
@@ -16,6 +15,7 @@
           </q-item-label>
         </q-item-section>
       </q-item>
+      <user-profile v-else :profile-info="profileInfo" />
     </q-card>
     <q-card flat class="q-py-sm">
       <q-separator />
@@ -65,7 +65,7 @@ export default {
   data() {
     return {
       user: null,
-      profileInfo: null,
+      profileInfo: {},
       isLoadingUser: true,
       isLoadingPosts: true,
       skeletons: 9,
@@ -77,6 +77,7 @@ export default {
         query: { login: this.login },
       });
       if (user.data) {
+        this.profileInfo.user = user.data;
         this.isLoadingUser = false;
         return user.data;
       }
@@ -89,11 +90,8 @@ export default {
         },
       });
       if (posts) {
+        this.profileInfo.postsCount = posts.length;
         this.isLoadingPosts = false;
-        this.profileInfo = {
-          user: this.userDetails,
-          postsCount: posts.length,
-        };
         return posts;
       }
       return [];
