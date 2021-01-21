@@ -25,7 +25,7 @@ class User {
   }
 
   static async get({ query = {} } = {}) {
-    await axios.get('https://vuegramm.herokuapp.com/api/users', { params: query })
+    await axios.get('/api/users', { params: query })
       .then((res) => {
         const { data } = res;
         this.result = {

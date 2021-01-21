@@ -4,7 +4,7 @@ class Post {
   static result;
 
   static async getPosts({ query = {} } = {}) {
-    await axios.get('https://vuegramm.herokuapp.com/api/posts', { params: query })
+    await axios.get('/api/posts', { params: query })
       .then((res) => {
         const { data } = res;
         this.result = data;
