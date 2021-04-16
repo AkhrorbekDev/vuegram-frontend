@@ -21,7 +21,7 @@ const routes = [
     name: 'home',
     meta: {
       layout: MainLayout,
-      protected: true,
+      // protected: true,
 
     },
     component: HomePage,
